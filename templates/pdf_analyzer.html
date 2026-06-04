@@ -1,0 +1,94 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>📄 AI PDF Notes Analyzer</h2>
+
+    <p class="mb-0">
+        Upload your PDF notes and get an AI-generated summary instantly
+    </p>
+
+</div>
+
+<div class="upload-card">
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label class="mb-2">
+            Upload PDF File
+        </label>
+
+        <input
+            type="file"
+            name="pdf"
+            class="form-control"
+            accept=".pdf"
+            required>
+
+        <br>
+
+        <button class="btn btn-primary">
+            Analyze PDF
+        </button>
+
+    </form>
+
+</div>
+
+{% if summary %}
+
+<div class="result-card">
+
+    <h4>📑 PDF Summary</h4>
+
+    <hr>
+
+    <pre>{{ summary }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#3b82f6,#06b6d4);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.upload-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    margin:0;
+}
+
+</style>
+
+{% endblock %}
+```

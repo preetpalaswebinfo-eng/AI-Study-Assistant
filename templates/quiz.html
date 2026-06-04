@@ -1,0 +1,87 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>📝 AI Quiz Generator</h2>
+
+    <p class="mb-0">
+        Generate AI-powered quizzes on any topic
+    </p>
+
+</div>
+
+<div class="quiz-card">
+
+    <form method="POST">
+
+        <label class="mb-2">
+            Enter Topic
+        </label>
+
+        <input
+            type="text"
+            name="topic"
+            class="form-control"
+            placeholder="Example: Python, AI, Data Science"
+            required>
+
+        <br>
+
+        <button class="btn btn-warning">
+            Generate Quiz
+        </button>
+
+    </form>
+
+</div>
+
+{% if quiz_result %}
+
+<div class="result-card">
+
+    <h4>Generated Quiz</h4>
+
+    <hr>
+
+    <pre>{{ quiz_result }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#f59e0b,#f97316);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.quiz-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+pre{
+    white-space:pre-wrap;
+}
+
+</style>
+
+{% endblock %}
+```

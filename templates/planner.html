@@ -1,0 +1,107 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>📅 AI Study Planner</h2>
+
+    <p class="mb-0">
+        Generate a smart study schedule based on your available study hours
+    </p>
+
+</div>
+
+<div class="planner-card">
+
+    <form method="POST">
+
+        <label class="mb-2">
+            Subject Name
+        </label>
+
+        <input
+            type="text"
+            name="subject"
+            class="form-control"
+            placeholder="Example: Python, AI, Data Science"
+            required>
+
+        <br>
+
+        <label class="mb-2">
+            Study Hours Per Day
+        </label>
+
+        <input
+            type="number"
+            name="hours"
+            class="form-control"
+            placeholder="Example: 2"
+            required>
+
+        <br>
+
+        <button class="btn btn-primary">
+            Generate Study Plan
+        </button>
+
+    </form>
+
+</div>
+
+{% if plan %}
+
+<div class="result-card">
+
+    <h4>📖 Generated Study Plan</h4>
+
+    <hr>
+
+    <pre>{{ plan }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.planner-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    margin:0;
+}
+
+</style>
+
+{% endblock %}
+```

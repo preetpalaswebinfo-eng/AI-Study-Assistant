@@ -1,0 +1,94 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>🗂 AI Flashcard Generator</h2>
+
+    <p class="mb-0">
+        Generate quick revision flashcards for any topic using AI
+    </p>
+
+</div>
+
+<div class="flashcard-card">
+
+    <form method="POST">
+
+        <label class="mb-2">
+            Enter Topic
+        </label>
+
+        <input
+            type="text"
+            name="topic"
+            class="form-control"
+            placeholder="Example: Python, AI, Machine Learning"
+            required>
+
+        <br>
+
+        <button class="btn btn-primary">
+            Generate Flashcards
+        </button>
+
+    </form>
+
+</div>
+
+{% if flashcards %}
+
+<div class="result-card">
+
+    <h4>📝 Generated Flashcards</h4>
+
+    <hr>
+
+    <pre>{{ flashcards }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#8b5cf6,#ec4899);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.flashcard-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    margin:0;
+}
+
+</style>
+
+{% endblock %}
+```

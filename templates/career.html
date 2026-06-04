@@ -1,0 +1,94 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>🎯 AI Career Guidance</h2>
+
+    <p class="mb-0">
+        Get AI-powered career recommendations based on your interests and skills
+    </p>
+
+</div>
+
+<div class="career-card">
+
+    <form method="POST">
+
+        <label class="mb-2">
+            Enter Your Interest
+        </label>
+
+        <input
+            type="text"
+            name="interest"
+            class="form-control"
+            placeholder="Example: Python, AI, Web Development"
+            required>
+
+        <br>
+
+        <button class="btn btn-success">
+            Get Career Advice
+        </button>
+
+    </form>
+
+</div>
+
+{% if career_result %}
+
+<div class="result-card">
+
+    <h4>🚀 Career Recommendation</h4>
+
+    <hr>
+
+    <pre>{{ career_result }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#10b981,#059669);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.career-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    margin:0;
+}
+
+</style>
+
+{% endblock %}
+```

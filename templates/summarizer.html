@@ -1,0 +1,94 @@
+```html
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="header">
+
+    <h2>📚 AI Notes Summarizer</h2>
+
+    <p class="mb-0">
+        Convert long notes into concise and easy-to-read summaries
+    </p>
+
+</div>
+
+<div class="summarizer-card">
+
+    <form method="POST">
+
+        <label class="mb-2">
+            Paste Your Notes
+        </label>
+
+        <textarea
+            name="notes"
+            class="form-control"
+            rows="10"
+            placeholder="Paste your notes here..."
+            required></textarea>
+
+        <br>
+
+        <button class="btn btn-success">
+            Generate Summary
+        </button>
+
+    </form>
+
+</div>
+
+{% if summary %}
+
+<div class="result-card">
+
+    <h4>📄 Generated Summary</h4>
+
+    <hr>
+
+    <pre>{{ summary }}</pre>
+
+</div>
+
+{% endif %}
+
+<style>
+
+.header{
+    background:linear-gradient(135deg,#10b981,#14b8a6);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.summarizer-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.result-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+textarea{
+    border-radius:12px !important;
+}
+
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    margin:0;
+}
+
+</style>
+
+{% endblock %}
+```

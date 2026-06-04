@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="chat-container">
+
+    <div class="chat-header">
+
+        <h2>🤖 AI Chat Assistant</h2>
+
+        <p class="mb-0">
+            Ask anything and get AI-powered answers
+        </p>
+
+    </div>
+
+    <div class="chat-box">
+
+        {% if answer %}
+
+        <div class="ai-msg">
+
+            <strong>🤖 AI Response:</strong>
+
+            <hr>
+
+            {{ answer }}
+
+        </div>
+
+        {% else %}
+
+        <div class="text-center text-muted mt-5">
+
+            <h4>Start a conversation with AI</h4>
+
+            <p>Ask any study related question</p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="input-area">
+
+        <form method="POST">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    name="question"
+                    class="form-control"
+                    placeholder="Ask your question..."
+                    required>
+
+                <button class="btn btn-primary btn-send">
+                    Send
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<style>
+
+.chat-container{
+    max-width:1000px;
+}
+
+.chat-header{
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.chat-box{
+    background:white;
+    border-radius:20px;
+    min-height:450px;
+    padding:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.ai-msg{
+    background:#eef2ff;
+    padding:15px;
+    border-radius:15px;
+}
+
+.input-area{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+</style>
+
+{% endblock %}
