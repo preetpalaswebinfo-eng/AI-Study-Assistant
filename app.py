@@ -135,6 +135,8 @@ def pdf_analyzer():
 
         pdf_file = request.files['pdf']
 
+        os.makedirs("uploads", exist_ok=True)
+
         file_path = os.path.join("uploads", pdf_file.filename)
 
         pdf_file.save(file_path)
